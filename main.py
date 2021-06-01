@@ -18,14 +18,15 @@ if __name__ == "__main__":
         exit(1)
 
     parser = argparse.ArgumentParser(description="Git operator to add environment variables to Gitlab projects/groups")
-    parser.add_argument('action', help="Create project variables", choices=["create"])
+    parser.add_argument('action', help="Create or update project variables", choices=["project-create","group-create"])
     parser.add_argument('--pid', help="Gitlab project ID", type=int, dest='pid')
     parser.add_argument('--file', help="Variable json file", type=str, dest='file')
 
     args = parser.parse_args()
 
-    if args.action == "create":
+    if args.action == "project-create":
         create_project_var(args.pid, header, args.file)
-
+    else:
+        pass
     exit(0)
         
