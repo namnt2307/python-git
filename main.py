@@ -25,12 +25,5 @@ if __name__ == "__main__":
     elif args.action == "update":
         update_var(args.pid,header,args.file)
 
-
     exit(0)
         
-
-        
-
-
-
-    exit(0)
