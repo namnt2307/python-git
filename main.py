@@ -12,12 +12,19 @@ header = {
 if __name__ == "__main__":
     
     if GITLAB_PRIVATE_TOKEN == None:
-        print("""Please set GITLAB_PRIVATE_TOKEN before using pygit        
-        """)
+        print(
+        """Please set GITLAB_PRIVATE_TOKEN before using pygit        
+        """
+        )
+
         exit(1)
+
     elif GITLAB_URL == None:
-        print("""Please set GITLAB_URL before using pygit        
-        """)
+        print(
+        """Please set GITLAB_URL before using pygit        
+        """
+        )
+
         exit(1)    
 
     parser = argparse.ArgumentParser(description="Git operator to add environment variables to Gitlab projects/groups")
@@ -31,5 +38,6 @@ if __name__ == "__main__":
         create_variable(GITLAB_URL, 'projects',args.id, header, args.file)
     elif args.action == "group-create-var":
         create_variable(GITLAB_URL, 'groups',args.id, header, args.file)
+   
     exit(0)
         
