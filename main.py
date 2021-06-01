@@ -1,6 +1,6 @@
 import os
 import argparse
-from lib import post_var
+from lib import *
 GITLAB_PRIVATE_TOKEN = os.getenv('GITLAB_PRIVATE_TOKEN',None)
 header = {}
 if __name__ == "__main__":
@@ -21,10 +21,15 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.action == "create":
-        # print(args.pid,header,args.file)
-        post_var(args.pid,header,args.file)
-    else:
-        pass
+        create_var(args.pid,header,args.file)
+    elif args.action == "update":
+        update_var(args.pid,header,args.file)
+
+
+    exit(0)
+        
+
+        
 
 
 
