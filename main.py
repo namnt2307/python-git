@@ -16,15 +16,12 @@ if __name__ == "__main__":
         """Please set GITLAB_PRIVATE_TOKEN before using pygit        
         """
         )
-
         exit(1)
-
     elif GITLAB_URL == None:
         print(
         """Please set GITLAB_URL before using pygit        
         """
         )
-
         exit(1)    
 
     parser = argparse.ArgumentParser(description="Git operator to add environment variables to Gitlab projects/groups")
