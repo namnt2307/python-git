@@ -1,14 +1,14 @@
 [{
     "variable_type": "env_var",
     "key": "TEST_KEY1x",
-    "value": "test1aa",
+    "value": "test1aaxxx",
     "protected": true,
     "masked": false,
     "environment_scope": "*"
     },
     {
     "variable_type": "env_var",
-    "key": "TEST_KEY13",
+    "key": "TEST_KEY11233",
     "value": "testxxx1111",
     "protected": true,
     "masked": false,
