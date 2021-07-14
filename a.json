@@ -1,25 +1,162 @@
-[{
+[
+  {
     "variable_type": "env_var",
-    "key": "TEST_KEY1x",
-    "value": "test1aaxxx",
+    "key": "AUTO_BOT_TOKEN",
+    "value": "4y_tVHoT-a44cq_DhD9x",
     "protected": true,
     "masked": false,
     "environment_scope": "*"
-    },
-    {
+  },
+  {
     "variable_type": "env_var",
-    "key": "TEST_KEY11233",
-    "value": "testxxx1111",
+    "key": "CI_NAMESPACE",
+    "value": "bigdata",
     "protected": true,
     "masked": false,
-    "environment_scope": "*"        
-    },
-    {
-        "variable_type": "env_var",
-        "key": "TEST_KEY33",
-        "value": "testxxx",
-        "protected": true,
-        "masked": false,
-        "environment_scope": "*"        
-    }
+    "environment_scope": "*"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "CI_ENVIRONMENT_NAME",
+    "value": "dev",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "dev"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "CONTAINER_PORT",
+    "value": "7000",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "*"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "MAX_REPLICAS",
+    "value": "3",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "*"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "MIN_REPLICAS",
+    "value": "1",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "*"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_CPU",
+    "value": "0.5",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "dev"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "dev"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_CPU",
+    "value": "0.5",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "dev"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "dev"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "CPU_ULTILIZATION_PERCENTAGE",
+    "value": "80",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "*"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "CI_ENVIRONMENT_NAME",
+    "value": "dev",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "testing"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_CPU",
+    "value": "0.5",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "production"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "production"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_CPU",
+    "value": "0.3",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "production"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "production"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_CPU",
+    "value": "0.5",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "testing"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_REQUEST_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "testing"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_MEM",
+    "value": "256Mi",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "testing"
+  },
+  {
+    "variable_type": "env_var",
+    "key": "POD_LIMIT_CPU",
+    "value": "0.5",
+    "protected": true,
+    "masked": false,
+    "environment_scope": "testing"
+  }
 ]

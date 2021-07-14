@@ -4,4 +4,9 @@ __pycache__/
 *$py.class
 
 # test
-test.py
+testparse.py
+nam.py
+trigger.py
+# json
+b.json
+

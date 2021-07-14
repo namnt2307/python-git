@@ -1,40 +1,52 @@
 import os
 import argparse
-from lib import create_variable
+import func
+GITLAB_PRIVATE_TOKEN = os.getenv(
+    "GITLAB_PRIVATE_TOKEN", 'zNBtw3sdCAZLvsXVGXbw')
+GITLAB_URL = os.getenv("GITLAB_URL", 'https://gitlab.vieon.vn')
 
-GITLAB_PRIVATE_TOKEN = os.getenv('GITLAB_PRIVATE_TOKEN', None)
-GITLAB_URL = os.getenv('GITLAB_URL', None)
-
-header = {
-    'PRIVATE-TOKEN': GITLAB_PRIVATE_TOKEN
-    }
+header = {"PRIVATE-TOKEN": GITLAB_PRIVATE_TOKEN}
 
 if __name__ == "__main__":
-    
-    if GITLAB_PRIVATE_TOKEN == None:
-        print(
-        """Please set GITLAB_PRIVATE_TOKEN before using pygit        
-        """
-        )
-        exit(1)
-    elif GITLAB_URL == None:
-        print(
-        """Please set GITLAB_URL before using pygit        
-        """
-        )
-        exit(1)    
 
-    parser = argparse.ArgumentParser(description="Git operator to add environment variables to Gitlab projects/groups")
-    parser.add_argument('action', help="Create or update project variables", choices=["project-create-var","group-create-var"])
-    parser.add_argument('--id', help="Gitlab groups/projects ID", type=int, dest='id')
-    parser.add_argument('--file', help="Variable json file", type=str, dest='file')
+    parser = argparse.ArgumentParser(
+        prog="pygit",
+        description="Git operator to add environment variables to Gitlab projects/groups",
+    )
+    parser.add_argument(
+        "action",
+        help="Upsert variables, get project id, trigger pipeline",
+        choices=["upsert", "list", "trigger"],
+    )
+    parser.add_argument("--type", help="Project or Group level", dest="level")
+    parser.add_argument(
+        "--id", help="Gitlab groups/projects ID", type=int, dest="id")
+    parser.add_argument("--file", help="Variable json file",
+                        type=str, dest="file")
+    parser.add_argument(
+        "--per", help="Display more objects per page", type=int, dest="per"
+    )
+    parser.add_argument(
+        "-e", help="Extra variables for pipeline", type=str, dest="extra_vars"
+    )
+    parser.add_argument(
+        "--ref", help="Branch", type=str, dest="ref"
+    )
 
     args = parser.parse_args()
 
-    if args.action == "project-create-var":
-        create_variable(GITLAB_URL, 'projects',args.id, header, args.file)
-    elif args.action == "group-create-var":
-        create_variable(GITLAB_URL, 'groups',args.id, header, args.file)
-   
+    if GITLAB_PRIVATE_TOKEN is None or GITLAB_URL is None:
+        print(
+            """Please set GITLAB_PRIVATE_TOKEN and GITLAB_URL before using pygit
+        """
+        )
+        exit(1)
+
+    if args.action == "upsert":
+        func.upsert_variable(GITLAB_URL, args.level,
+                             args.id, header, args.file)
+    if args.action == "list":
+        pass
+    if args.action == "trigger":
+        func.trigger(GITLAB_URL, args.id, header, args.ref, args.extra_vars)
     exit(0)
-        

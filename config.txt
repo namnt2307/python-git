@@ -1,0 +1,30 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUN5RENDQWJDZ0F3SUJBZ0lCQURBTkJna3Foa2lHOXcwQkFRc0ZBREFWTVJNd0VRWURWUVFERXdwcmRXSmwKY201bGRHVnpNQjRYRFRJd01UQXlNVEE0TURVeE1Wb1hEVE13TVRBeE9UQTRNRFV4TVZvd0ZURVRNQkVHQTFVRQpBeE1LYTNWaVpYSnVaWFJsY3pDQ0FTSXdEUVlKS29aSWh2Y05BUUVCQlFBRGdnRVBBRENDQVFvQ2dnRUJBTktFCmJ5bXRtZzlITEk4TklaNDlaejQ0dWkza29ReEtzdzM3T2lUWjdvK1llaGdrNkJIbkFSRzV2R29kdUJaeUFXNkEKR25BQm5JdUd3dC96aGNkaDhHV0ZXR1Fla0REY1JSVTYvU0hnb2NrdGpwaWxMdzh1NTAycE9CNU9OaVBsNHdHZwpmODBIYzJ5T2hDZzRUeWFudUs4TTNnd3R3Q3VCTjZMUXQ4U01HWCs1VjZPckJwZ0ZKUHJ4b3hramh0NURNaE16CklQR3U2OE1oSi9OUTZBSkQxU09IMGJMTUJ5eWpsNTFkSHVXbTNSWC9QenVoS3RxOHNZVFEzTHFXSGFaMHN3NFMKTGFJa0lUaXE3RHo4amkvRkhMWmtYRGpDcnJUamlOMlRjWnBXYk1na05JMHFMY2orSlFzMFAvMy9WSHp6UXMxdgowYzFNa0xKRy9UbklHam5Ib2RrQ0F3RUFBYU1qTUNFd0RnWURWUjBQQVFIL0JBUURBZ0trTUE4R0ExVWRFd0VCCi93UUZNQU1CQWY4d0RRWUpLb1pJaHZjTkFRRUxCUUFEZ2dFQkFJTWlUOTFQVDNudW5CZXpGL2pUWmxnOFFHNEgKcUc2VjlNdnFUT1d6N3RTV3JPM1h3M0RYV050SDVhWUJFdzI5QS85eVJHbzFhdGlxWCtBcTgvM2lDR25PeXRzbgo5ZTJTdEpMUWk3QzJDWXZBVmtKcWZ0c3R3cFIrZWdhcWtoWDhyZ1o1NXBhUCttRjY5R3EzbWMzYjlpcUJvMFU1CjFSZEhNakkwN3dWRVhFdC9ETktvMjdaWU52WXFmaldpY2hCZ01qVWhJWGNJQVJoOTB3b09Nd2pIalJjclF2UE0KdTJRSlBDL0hhVkJVTzhiVmJ1djgyNGluWUFTOVhxb3dlYnI4RnhrajByWDZkT2psNFgwaTJPTTNtZjdoZEttMgppYTdRSkVwcXUyamN4YmZwZXhKVFJRSktkell4VVd1TGlCcC9uc21iVGNUS3d3Qk5TbW1PNmtCSHdFUT0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://BEB87230CB7D3008DE81C04EB111C374.gr7.ap-southeast-1.eks.amazonaws.com
+  name: VieON-Services.ap-southeast-1.eksctl.io
+contexts:
+- context:
+    cluster: VieON-Services.ap-southeast-1.eksctl.io
+    user: thien.ly@dzones.vn@VieON-Services.ap-southeast-1.eksctl.io
+  name: thien.ly@dzones.vn@VieON-Services.ap-southeast-1.eksctl.io
+current-context: thien.ly@dzones.vn@VieON-Services.ap-southeast-1.eksctl.io
+kind: Config
+preferences: {}
+users:
+- name: thien.ly@dzones.vn@VieON-Services.ap-southeast-1.eksctl.io
+  user:
+    exec:
+      apiVersion: client.authentication.k8s.io/v1alpha1
+      args:
+      - eks
+      - get-token
+      - --cluster-name
+      - VieON-Services
+      - --region
+      - ap-southeast-1
+      command: aws
+      env:
+      - name: AWS_STS_REGIONAL_ENDPOINTS
+        value: regional
