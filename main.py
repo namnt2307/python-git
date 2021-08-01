@@ -2,8 +2,8 @@ import os
 import argparse
 import func
 GITLAB_PRIVATE_TOKEN = os.getenv(
-    "GITLAB_PRIVATE_TOKEN", 'zNBtw3sdCAZLvsXVGXbw')
-GITLAB_URL = os.getenv("GITLAB_URL", 'https://gitlab.vieon.vn')
+    "GITLAB_PRIVATE_TOKEN", '')
+GITLAB_URL = os.getenv("GITLAB_URL", '')
 
 header = {"PRIVATE-TOKEN": GITLAB_PRIVATE_TOKEN}
 
